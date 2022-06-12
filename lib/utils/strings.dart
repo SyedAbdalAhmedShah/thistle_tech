@@ -7,4 +7,7 @@ class Strings {
   static const String expertTech = "Expert tech advice";
   static const String weMakeBusiness =
       "We make it our business to help your business succeed.";
+
+  //----------------Images-------------------
+  static const String headerBackgroundImg = "assets/P-1024x750.jpeg";
 }

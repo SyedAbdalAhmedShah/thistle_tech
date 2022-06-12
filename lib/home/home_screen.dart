@@ -45,6 +45,7 @@ class HomeScreen extends StatelessWidget {
                           ),
                           Expanded(
                             child: TabBar(
+                                physics: const NeverScrollableScrollPhysics(),
                                 indicatorColor: Colors.white,
                                 overlayColor: Config.materialTransparentColor,
                                 labelColor: innerBoxIsScrolled
@@ -72,6 +73,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ],
             body: const TabBarView(
+              physics: NeverScrollableScrollPhysics(),
               children: [MyHomePage(), AboutUs(), Services()],
             )),
       ),
