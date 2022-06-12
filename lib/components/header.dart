@@ -1,6 +1,8 @@
 import 'package:app/utils/config.dart';
+import 'package:app/utils/responsive_handler.dart';
 import 'package:app/utils/strings.dart';
 import 'package:flutter/material.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 class Header extends StatelessWidget {
   const Header({Key? key}) : super(key: key);
@@ -10,13 +12,23 @@ class Header extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
           borderRadius: BorderRadius.only(
-              topRight: Radius.circular(300),
-              bottomRight: Radius.circular(300)),
-          image: DecorationImage(
+              topRight: Radius.circular(RHandler.getBorderRadiusValue(context)),
+              bottomRight:
+                  Radius.circular(RHandler.getBorderRadiusValue(context))),
+          image: const DecorationImage(
               image: AssetImage(Strings.headerBackgroundImg),
               fit: BoxFit.fill)),
       child: Container(
-        height: 550,
+        padding: const EdgeInsets.symmetric(horizontal: 100),
+        height: ResponsiveValue(context,
+                valueWhen: [
+                  Condition.largerThan(
+                      name: TABLET,
+                      value: ResponsiveWrapper.of(context).screenHeight * 0.35)
+                ],
+                defaultValue:
+                    ResponsiveWrapper.of(context).screenHeight * 0.472)
+            .value!,
         alignment: Alignment.center,
         decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -34,43 +46,57 @@ class Header extends StatelessWidget {
             end: Alignment.centerRight,
             stops: const [0, 0.2, 0.4, 0.6, 0.7, 0.8, 0.9, 1],
           ),
-          borderRadius: const BorderRadius.only(
-              topRight: Radius.circular(300),
-              bottomRight: Radius.circular(300)),
+          borderRadius: BorderRadius.only(
+              topRight: Radius.circular(RHandler.getBorderRadiusValue(context)),
+              bottomRight:
+                  Radius.circular(RHandler.getBorderRadiusValue(context))),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            // Spacer(),
-            // const SizedBox(
-            //   height: 50,
-            // ),
+            const Spacer(),
             Text(
               Strings.expertTech,
-              style: TextStyle(fontSize: 80, color: Config.whiteColor),
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  fontSize: RHandler.headingFontValue(context, 50, 55, 45),
+                  color: Config.whiteColor),
             ),
             const SizedBox(
-              height: 5,
+              height: 10,
             ),
-            Text(Strings.weMakeBusiness,
-                style: TextStyle(
-                    fontSize: 28, color: Config.whiteColor, letterSpacing: 1)),
+            SizedBox(
+              width: ResponsiveValue<double>(context,
+                      valueWhen: [
+                        const Condition.largerThan(
+                            name: Strings.kLargeMobile, value: double.infinity)
+                      ],
+                      defaultValue: 500)
+                  .value,
+              child: Text(Strings.weMakeBusiness,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      wordSpacing: 2,
+                      fontSize: RHandler.headingFontValue(context, 18, 20, 20),
+                      color: Config.whiteColor,
+                      letterSpacing: 1)),
+            ),
             // Spacer(),
             const SizedBox(
-              height: 80,
+              height: 50,
             ),
             MaterialButton(
               height: 50,
               onPressed: () {},
               color: Colors.white.withOpacity(0.7),
-              shape: CircleBorder(),
+              shape: const CircleBorder(),
               child: const Icon(
                 Icons.keyboard_arrow_down_sharp,
                 size: 30,
               ),
             ),
-            const SizedBox(
-              height: 80,
+            SizedBox(
+              height: ResponsiveWrapper.of(context).screenHeight * 0.06,
             ),
           ],
         ),

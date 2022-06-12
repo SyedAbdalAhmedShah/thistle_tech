@@ -1,4 +1,5 @@
 import 'package:app/home/home_screen.dart';
+import 'package:app/utils/strings.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
@@ -30,13 +31,16 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       builder: (context, child) => ResponsiveWrapper.builder(
-        child,
+        ClampingScrollWrapper.builder(context, child!),
         minWidth: 480,
-        defaultScale: true,
+        maxWidth: 1800,
+        // defaultScale: true,
         breakpoints: const [
           ResponsiveBreakpoint.resize(480, name: MOBILE),
-          ResponsiveBreakpoint.autoScale(800, name: TABLET),
-          ResponsiveBreakpoint.resize(1000, name: DESKTOP),
+          ResponsiveBreakpoint.resize(600, name: Strings.kLargeMobile),
+          ResponsiveBreakpoint.resize(980, name: TABLET),
+          ResponsiveBreakpoint.autoScale(1200, name: DESKTOP),
+          ResponsiveBreakpoint.autoScale(2460, name: '4K'),
         ],
       ),
       initialRoute: '/',

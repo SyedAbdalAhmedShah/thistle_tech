@@ -21,10 +21,8 @@ class HomeScreen extends StatelessWidget {
                     backgroundColor: Colors.white,
                     pinned: true,
                     // snap: true,
-                    stretch: true,
-                    automaticallyImplyLeading: false,
-                    stretchTriggerOffset: 50,
-                    expandedHeight: 80,
+
+                    expandedHeight: 60,
 
                     flexibleSpace: FlexibleSpaceBar(
                       expandedTitleScale: 1.1,
@@ -40,7 +38,7 @@ class HomeScreen extends StatelessWidget {
                                   color: Config.logoColor,
                                   fontWeight: FontWeight.w500,
                                   fontFamily: GoogleFonts.roboto().fontFamily,
-                                  fontSize: 26),
+                                  fontSize: 24),
                             ),
                           ),
                           Expanded(
