@@ -1,3 +1,4 @@
+import 'package:app/components/contactUs_section.dart';
 import 'package:app/components/footer.dart';
 import 'package:app/components/header.dart';
 import 'package:app/components/verticalGap.dart';
@@ -75,7 +76,8 @@ class MyHomePage extends StatelessWidget {
               )
             ],
           ),
-          Footer()
+          const ContactUsSection(),
+          const Footer()
         ],
       ),
     );

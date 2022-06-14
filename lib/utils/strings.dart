@@ -8,6 +8,15 @@ class Strings {
   static const String keyService = "Key services overview";
   static const String logoName = "THISTLE TECH";
   static const String expertTech = "Expert tech advice";
+  static const String emailUs = 'Email Us';
+  static const String email = 'enquiries@thistletech.co.nz';
+  static const String callUs = 'Call Us';
+  static const String callNumber = '+64 (22) 151 7616';
+  static const String officeLocation = 'Office Location';
+  static const String location =
+      'Oropi Rd, Tauranga, Bo\n(by appointment only)';
+  static const String hours = 'Hours';
+  static const String hoursTime = 'Mon-Fri: 8am - 5pm\nSat-Sun: Closed';
   static const String weMakeBusiness =
       "We make it our business to help your business succeed.";
   static const String strategy =

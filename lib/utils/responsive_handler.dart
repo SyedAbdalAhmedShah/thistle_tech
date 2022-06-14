@@ -22,4 +22,41 @@ class RHandler {
       defaultValue: defaultValue,
     ).value!;
   }
+
+  static Widget getSpacer() {
+    return const ResponsiveVisibility(
+        visible: false,
+        visibleWhen: [Condition.largerThan(name: Strings.kLargeMobile)],
+        hiddenWhen: [Condition.smallerThan(name: Strings.kLargeMobile)],
+        child: Spacer());
+  }
+
+  static Widget sizedBoxVisible(BuildContext context, double space) {
+    return ResponsiveVisibility(
+      visible: false,
+      visibleWhen: const [
+        Condition.largerThan(name: Strings.kLargeMobile, value: true),
+      ],
+      hiddenWhen: const [
+        Condition.smallerThan(name: MOBILE, value: false),
+        Condition.smallerThan(name: Strings.kLargeMobile, value: false),
+      ],
+      child: SizedBox(
+        height: ResponsiveWrapper.of(context).screenHeight * space,
+      ),
+    );
+  }
+
+  static Widget sizedBoxWhenSmalerThanTablet(
+      BuildContext context, double space) {
+    return ResponsiveVisibility(
+      visible: false,
+      visibleWhen: const [
+        Condition.smallerThan(name: TABLET, value: true),
+      ],
+      child: SizedBox(
+        height: ResponsiveWrapper.of(context).screenHeight * space,
+      ),
+    );
+  }
 }

@@ -20,15 +20,7 @@ class Header extends StatelessWidget {
               fit: BoxFit.fill)),
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 100),
-        height: ResponsiveValue(context,
-                valueWhen: [
-                  Condition.largerThan(
-                      name: TABLET,
-                      value: ResponsiveWrapper.of(context).screenHeight * 0.35)
-                ],
-                defaultValue:
-                    ResponsiveWrapper.of(context).screenHeight * 0.472)
-            .value!,
+        height: ResponsiveWrapper.of(context).screenHeight * 0.45,
         alignment: Alignment.center,
         decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -52,9 +44,12 @@ class Header extends StatelessWidget {
                   Radius.circular(RHandler.getBorderRadiusValue(context))),
         ),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
+          mainAxisAlignment: ResponsiveWrapper.of(context).isSmallerThan(TABLET)
+              ? MainAxisAlignment.spaceEvenly
+              : MainAxisAlignment.end,
           children: [
-            const Spacer(),
+            RHandler.getSpacer(),
+            RHandler.sizedBoxWhenSmalerThanTablet(context, 0.1),
             Text(
               Strings.expertTech,
               textAlign: TextAlign.center,
@@ -62,9 +57,7 @@ class Header extends StatelessWidget {
                   fontSize: RHandler.headingFontValue(context, 50, 55, 45),
                   color: Config.whiteColor),
             ),
-            const SizedBox(
-              height: 10,
-            ),
+            RHandler.sizedBoxVisible(context, 0.02),
             SizedBox(
               width: ResponsiveValue<double>(context,
                       valueWhen: [
@@ -81,12 +74,9 @@ class Header extends StatelessWidget {
                       color: Config.whiteColor,
                       letterSpacing: 1)),
             ),
-            // Spacer(),
-            const SizedBox(
-              height: 50,
-            ),
+            RHandler.sizedBoxVisible(context, 0.08),
             MaterialButton(
-              height: 50,
+              height: ResponsiveWrapper.of(context).screenHeight * 0.03,
               onPressed: () {},
               color: Colors.white.withOpacity(0.7),
               shape: const CircleBorder(),
@@ -95,9 +85,7 @@ class Header extends StatelessWidget {
                 size: 30,
               ),
             ),
-            SizedBox(
-              height: ResponsiveWrapper.of(context).screenHeight * 0.06,
-            ),
+            RHandler.sizedBoxVisible(context, 0.06),
           ],
         ),
       ),

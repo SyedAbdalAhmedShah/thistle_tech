@@ -14,6 +14,7 @@ class Config {
   static Color blackColor = Colors.black;
   static Color tabBarActiveColor = const Color(0xFFed991a);
   static Color unSelectedColor = const Color(0xFF505050);
+  static Color lightYellow = const Color(0xFFe8e09e);
   static Color lightGrey = const Color(0xFFd6d6d6);
   static Color whiteColor = Colors.white;
   static Color logoColor = const Color(0xFF64288c);

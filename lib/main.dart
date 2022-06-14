@@ -31,12 +31,12 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       builder: (context, child) => ResponsiveWrapper.builder(
-        ClampingScrollWrapper.builder(context, child!),
+        BouncingScrollWrapper(child: child!),
         minWidth: 480,
         maxWidth: 1800,
         // defaultScale: true,
         breakpoints: const [
-          ResponsiveBreakpoint.resize(480, name: MOBILE),
+          ResponsiveBreakpoint.autoScale(480, name: MOBILE),
           ResponsiveBreakpoint.resize(600, name: Strings.kLargeMobile),
           ResponsiveBreakpoint.resize(980, name: TABLET),
           ResponsiveBreakpoint.autoScale(1200, name: DESKTOP),
