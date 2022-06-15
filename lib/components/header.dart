@@ -21,6 +21,9 @@ class Header extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 100),
         height: ResponsiveWrapper.of(context).screenHeight * 0.45,
+        constraints: BoxConstraints(
+          minHeight: 400,
+        ),
         alignment: Alignment.center,
         decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -45,7 +48,7 @@ class Header extends StatelessWidget {
         ),
         child: Column(
           mainAxisAlignment: ResponsiveWrapper.of(context).isSmallerThan(TABLET)
-              ? MainAxisAlignment.spaceEvenly
+              ? MainAxisAlignment.center
               : MainAxisAlignment.end,
           children: [
             RHandler.getSpacer(),
@@ -58,6 +61,7 @@ class Header extends StatelessWidget {
                   color: Config.whiteColor),
             ),
             RHandler.sizedBoxVisible(context, 0.02),
+            RHandler.sizedBoxWhenSmalerThanTablet(context, 0.015),
             SizedBox(
               width: ResponsiveValue<double>(context,
                       valueWhen: [
@@ -75,6 +79,7 @@ class Header extends StatelessWidget {
                       letterSpacing: 1)),
             ),
             RHandler.sizedBoxVisible(context, 0.08),
+            RHandler.sizedBoxWhenSmalerThanTablet(context, 0.04),
             MaterialButton(
               height: ResponsiveWrapper.of(context).screenHeight * 0.03,
               onPressed: () {},

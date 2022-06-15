@@ -1,4 +1,5 @@
 import 'package:app/components/contact_info.dart';
+import 'package:app/components/tell_us_what_you_need_section.dart';
 import 'package:app/utils/strings.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_framework/responsive_framework.dart';
@@ -17,11 +18,16 @@ class ContactUsSection extends StatelessWidget {
         child: ResponsiveRowColumn(
           columnCrossAxisAlignment: CrossAxisAlignment.center,
           rowMainAxisAlignment: MainAxisAlignment.center,
-          rowPadding: EdgeInsets.symmetric(vertical: 20),
+          rowPadding: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+          rowCrossAxisAlignment: CrossAxisAlignment.start,
           layout: ResponsiveWrapper.of(context).isSmallerThan(TABLET)
               ? ResponsiveRowColumnType.COLUMN
               : ResponsiveRowColumnType.ROW,
-          children: const [ResponsiveRowColumnItem(child: ContactInfo())],
+          children: const [
+            ResponsiveRowColumnItem( child: ContactInfo()),
+            ResponsiveRowColumnItem(
+              child: TellUsWhatYouNeedSection())
+          ],
         ),
       ),
     );

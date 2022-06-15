@@ -15,7 +15,12 @@ class Strings {
   static const String officeLocation = 'Office Location';
   static const String location =
       'Oropi Rd, Tauranga, Bo\n(by appointment only)';
+  static const String tellUsWhat = 'Tell us what you need!';
+  static const String yourName = 'Your Name';
+  static const String yourEmail = 'Your Email Address';
   static const String hours = 'Hours';
+  static const String roleAndTitle = 'Your Role/Title';
+  static const String company = 'Company';
   static const String hoursTime = 'Mon-Fri: 8am - 5pm\nSat-Sun: Closed';
   static const String weMakeBusiness =
       "We make it our business to help your business succeed.";

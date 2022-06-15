@@ -46,7 +46,7 @@ class ContactInfo extends StatelessWidget {
           children: [
             Text(
               title,
-              style: TextStyle(color: Config.lightYellow),
+              style: TextStyle(color: Config.lightYellow, fontSize: 18),
             ),
             const SizedBox(
               height: 8,
@@ -54,7 +54,7 @@ class ContactInfo extends StatelessWidget {
             Text(
               subTitle,
               style: TextStyle(
-                  color: Config.whiteColor, fontSize: 10, letterSpacing: 1),
+                  color: Config.whiteColor, fontSize: 12, letterSpacing: 1),
             ),
           ],
         )
