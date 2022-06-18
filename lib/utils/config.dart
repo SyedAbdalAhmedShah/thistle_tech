@@ -16,6 +16,8 @@ class Config {
   static Color unSelectedColor = const Color(0xFF505050);
   static Color lightYellow = const Color(0xFFe8e09e);
   static Color lightGrey = const Color(0xFFd6d6d6);
+  static Color lightPink = const Color(0xFFE8DEF2);
+  static Color lightPeach = const Color(0xFFf0e6a0);
   static Color whiteColor = Colors.white;
   static Color logoColor = const Color(0xFF64288c);
   static Color colorAfterScroll = const Color(0xFF108094);
@@ -28,6 +30,6 @@ class Config {
   static Color color7 = const Color(0xFF205877);
   static Color color8 = const Color(0xFF20617d);
 
-  //-------------------Responsive values-------------------
-
+  //-------------------asset image-------------------
+  static const String flowerImage = 'assets/images.jpeg';
 }

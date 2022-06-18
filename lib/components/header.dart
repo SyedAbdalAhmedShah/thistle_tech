@@ -57,7 +57,7 @@ class Header extends StatelessWidget {
               Strings.expertTech,
               textAlign: TextAlign.center,
               style: TextStyle(
-                  fontSize: RHandler.headingFontValue(context, 50, 55, 45),
+                  fontSize: RHandler.headingFontValue(context, 30, 55, 45),
                   color: Config.whiteColor),
             ),
             RHandler.sizedBoxVisible(context, 0.02),

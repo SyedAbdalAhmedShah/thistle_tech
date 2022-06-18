@@ -9,24 +9,27 @@ class ContactInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        contactInfoTile(Strings.emailUs, Strings.email, Icons.email_outlined),
-        const VerticalGap(
-          customGap: 20,
-        ),
-        contactInfoTile(Strings.callUs, Strings.callNumber, Icons.call),
-        const VerticalGap(
-          customGap: 20,
-        ),
-        contactInfoTile(Strings.officeLocation, Strings.location,
-            Icons.assistant_navigation),
-        const VerticalGap(
-          customGap: 20,
-        ),
-        contactInfoTile(Strings.hours, Strings.hoursTime, Icons.timer)
-      ],
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          contactInfoTile(Strings.emailUs, Strings.email, Icons.email_outlined),
+          const VerticalGap(
+            customGap: 20,
+          ),
+          contactInfoTile(Strings.callUs, Strings.callNumber, Icons.call),
+          const VerticalGap(
+            customGap: 20,
+          ),
+          contactInfoTile(Strings.officeLocation, Strings.location,
+              Icons.assistant_navigation),
+          const VerticalGap(
+            customGap: 20,
+          ),
+          contactInfoTile(Strings.hours, Strings.hoursTime, Icons.timer)
+        ],
+      ),
     );
   }
 

@@ -16,7 +16,7 @@ class RHandler {
     return ResponsiveValue<double>(
       context,
       valueWhen: [
-        Condition.largerThan(name: Strings.kLargeMobile, value: fValue),
+        Condition.smallerThan(name: Strings.kLargeMobile, value: fValue),
         Condition.largerThan(name: TABLET, value: sValue),
       ],
       defaultValue: defaultValue,

@@ -1,6 +1,7 @@
 import 'package:app/utils/config.dart';
 import 'package:app/utils/strings.dart';
 import 'package:flutter/material.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 class TellUsWhatYouNeedSection extends StatefulWidget {
   const TellUsWhatYouNeedSection({Key? key}) : super(key: key);
@@ -60,10 +61,18 @@ class _TellUsWhatYouNeedSectionState extends State<TellUsWhatYouNeedSection> {
 
   SizedBox buildTextFieldsBox(String firstField, String secondField) {
     return SizedBox(
-      child: Row(
+      child: ResponsiveRowColumn(
+        layout:
+            ResponsiveWrapper.of(context).isSmallerThan(Strings.kLargeMobile)
+                ? ResponsiveRowColumnType.COLUMN
+                : ResponsiveRowColumnType.ROW,
         children: [
-          buildTextField(firstField),
-          buildTextField(secondField),
+          ResponsiveRowColumnItem(
+            child: buildTextField(firstField),
+          ),
+          ResponsiveRowColumnItem(
+            child: buildTextField(secondField),
+          )
         ],
       ),
     );
@@ -74,8 +83,18 @@ class _TellUsWhatYouNeedSectionState extends State<TellUsWhatYouNeedSection> {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 8),
       child: Container(
-        constraints: const BoxConstraints(minWidth: 200),
-        width: width ?? 300,
+        constraints: const BoxConstraints(minWidth: 150),
+        // width: width ?? 300,
+        width: ResponsiveValue<double>(
+          context,
+          valueWhen: [
+            Condition.smallerThan(
+                name: Strings.kLargeMobile,
+                value: ResponsiveWrapper.of(context).screenWidth),
+            const Condition.smallerThan(name: TABLET, value: 250)
+          ],
+          defaultValue: width ?? 300,
+        ).value,
         height: height,
         child: TextField(
           onTap: () {},
@@ -99,6 +118,7 @@ class _TellUsWhatYouNeedSectionState extends State<TellUsWhatYouNeedSection> {
   UnderlineInputBorder border() {
     return const UnderlineInputBorder(
         borderRadius: BorderRadius.all(Radius.zero),
-        borderSide: BorderSide(color: Colors.white, style: BorderStyle.solid));
+        borderSide: BorderSide(
+            color: Colors.white, style: BorderStyle.solid, width: 2));
   }
 }
