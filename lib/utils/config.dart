@@ -32,4 +32,6 @@ class Config {
 
   //-------------------asset image-------------------
   static const String flowerImage = 'assets/images.jpeg';
+  static const String logo =
+      'assets/71579-reused-symbol-recycling-images-paper-recycle.png';
 }

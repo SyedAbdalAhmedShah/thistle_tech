@@ -59,4 +59,16 @@ class RHandler {
       ),
     );
   }
+
+  static double getResponsiveFontSize(
+    BuildContext context,
+  ) {
+    return ResponsiveValue<double>(
+      context,
+      valueWhen: [
+        const Condition.largerThan(name: TABLET, value: 400),
+      ],
+      defaultValue: double.infinity,
+    ).value!;
+  }
 }

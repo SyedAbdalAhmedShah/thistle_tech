@@ -1,13 +1,14 @@
 import 'package:app/components/contactUs_section.dart';
 import 'package:app/components/footer.dart';
 import 'package:app/components/header.dart';
-import 'package:app/components/services_item.dart';
 import 'package:app/components/verticalGap.dart';
 import 'package:app/components/where_we_have_done.dart';
 import 'package:app/utils/config.dart';
 import 'package:app/utils/strings.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_framework/responsive_framework.dart';
+
+import '../../components/services_tile.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -19,7 +20,11 @@ class MyHomePage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const Header(),
+            const Header(
+              isButtonActive: true,
+              title: Strings.expertTech,
+              subtitle: Strings.weMakeBusiness,
+            ),
             const VerticalGap(
               customGap: 40,
             ),
@@ -384,7 +389,7 @@ class ServicesCardItems2 extends StatelessWidget {
         rowMainAxisAlignment: MainAxisAlignment.center,
         children: [
           ResponsiveRowColumnItem(
-            child: ServicesItem(
+            child: ServicesTile(
               color: Config.colorAfterScroll,
               icon: Icons.video_settings,
               title: Strings.serviceManagementText,
@@ -392,7 +397,7 @@ class ServicesCardItems2 extends StatelessWidget {
             ),
           ),
           ResponsiveRowColumnItem(
-            child: ServicesItem(
+            child: ServicesTile(
               color: Config.lightPeach,
               icon: Icons.security,
               iconColor: Colors.grey,
@@ -431,7 +436,7 @@ class ServicesCardsItems extends StatelessWidget {
         rowMainAxisAlignment: MainAxisAlignment.center,
         children: [
           ResponsiveRowColumnItem(
-            child: ServicesItem(
+            child: ServicesTile(
               color: Config.logoColor,
               icon: Icons.lightbulb_outline,
               title: Strings.stratgyText,
@@ -439,7 +444,7 @@ class ServicesCardsItems extends StatelessWidget {
             ),
           ),
           ResponsiveRowColumnItem(
-            child: ServicesItem(
+            child: ServicesTile(
               color: Config.lightPink,
               icon: Icons.calendar_today,
               iconColor: Colors.grey,
@@ -455,16 +460,16 @@ class ServicesCardsItems extends StatelessWidget {
 }
 
 class KeyServicesText extends StatelessWidget {
-  const KeyServicesText({
-    Key? key,
-  }) : super(key: key);
+  final String? title;
+  final double? defaultValue;
+  const KeyServicesText({this.title, this.defaultValue});
 
   @override
   Widget build(BuildContext context) {
     return Align(
         alignment: Alignment.center,
         child: Text(
-          Strings.keyService,
+          title ?? Strings.keyService,
           style: TextStyle(
             fontSize: ResponsiveValue<double>(context,
                     valueWhen: const [
@@ -473,7 +478,7 @@ class KeyServicesText extends StatelessWidget {
                       Condition.smallerThan(name: TABLET, value: 28),
                       Condition.smallerThan(name: DESKTOP, value: 24),
                     ],
-                    defaultValue: 25)
+                    defaultValue: defaultValue ?? 25)
                 .value!,
             color: Config.blackColor,
           ),
@@ -482,16 +487,17 @@ class KeyServicesText extends StatelessWidget {
 }
 
 class WhatWeDoText extends StatelessWidget {
-  const WhatWeDoText({
-    Key? key,
-  }) : super(key: key);
+  final String? title;
+  final double? defaultValue;
+
+  const WhatWeDoText({this.title, this.defaultValue});
 
   @override
   Widget build(BuildContext context) {
     return Align(
         alignment: Alignment.center,
         child: Text(
-          Strings.whatWeDo,
+          title ?? Strings.whatWeDo,
           style: TextStyle(
               fontSize: ResponsiveValue<double>(context,
                       valueWhen: const [
@@ -500,7 +506,7 @@ class WhatWeDoText extends StatelessWidget {
                         Condition.smallerThan(name: TABLET, value: 48),
                         Condition.smallerThan(name: DESKTOP, value: 60),
                       ],
-                      defaultValue: 60)
+                      defaultValue: defaultValue ?? 60)
                   .value!,
               color: Config.lightGrey),
         ));

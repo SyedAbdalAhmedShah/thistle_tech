@@ -5,7 +5,21 @@ import 'package:flutter/material.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 class Header extends StatelessWidget {
-  const Header({Key? key}) : super(key: key);
+  final bool isButtonActive;
+  final double? customHeight;
+  final String title;
+  final String subtitle;
+  final double? padding;
+  final double? sizedBoxWidth;
+  final AlignmentGeometry? alignment;
+  const Header(
+      {required this.isButtonActive,
+      this.customHeight,
+      this.alignment,
+      this.sizedBoxWidth,
+      this.padding,
+      required this.title,
+      required this.subtitle});
 
   @override
   Widget build(BuildContext context) {
@@ -20,9 +34,10 @@ class Header extends StatelessWidget {
               fit: BoxFit.fill)),
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 100),
-        height: ResponsiveWrapper.of(context).screenHeight * 0.45,
+        height:
+            customHeight ?? ResponsiveWrapper.of(context).screenHeight * 0.45,
         constraints: BoxConstraints(
-          minHeight: 400,
+          minHeight: customHeight ?? 400,
         ),
         alignment: Alignment.center,
         decoration: BoxDecoration(
@@ -54,7 +69,7 @@ class Header extends StatelessWidget {
             RHandler.getSpacer(),
             RHandler.sizedBoxWhenSmalerThanTablet(context, 0.1),
             Text(
-              Strings.expertTech,
+              title,
               textAlign: TextAlign.center,
               style: TextStyle(
                   fontSize: RHandler.headingFontValue(context, 30, 55, 45),
@@ -68,9 +83,9 @@ class Header extends StatelessWidget {
                         const Condition.largerThan(
                             name: Strings.kLargeMobile, value: double.infinity)
                       ],
-                      defaultValue: 500)
+                      defaultValue: sizedBoxWidth ?? 500)
                   .value,
-              child: Text(Strings.weMakeBusiness,
+              child: Text(subtitle,
                   textAlign: TextAlign.center,
                   style: TextStyle(
                       wordSpacing: 2,
@@ -80,14 +95,17 @@ class Header extends StatelessWidget {
             ),
             RHandler.sizedBoxVisible(context, 0.08),
             RHandler.sizedBoxWhenSmalerThanTablet(context, 0.04),
-            MaterialButton(
-              height: ResponsiveWrapper.of(context).screenHeight * 0.03,
-              onPressed: () {},
-              color: Colors.white.withOpacity(0.7),
-              shape: const CircleBorder(),
-              child: const Icon(
-                Icons.keyboard_arrow_down_sharp,
-                size: 30,
+            Visibility(
+              visible: isButtonActive,
+              child: MaterialButton(
+                height: ResponsiveWrapper.of(context).screenHeight * 0.03,
+                onPressed: () {},
+                color: Colors.white.withOpacity(0.7),
+                shape: const CircleBorder(),
+                child: const Icon(
+                  Icons.keyboard_arrow_down_sharp,
+                  size: 30,
+                ),
               ),
             ),
             RHandler.sizedBoxVisible(context, 0.06),
