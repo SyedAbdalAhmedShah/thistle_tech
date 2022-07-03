@@ -18,7 +18,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   @override
   void initState() {
     controller = TabController(
-      initialIndex: 2,
+      initialIndex: 0,
       length: 3,
       vsync: this,
     );

@@ -99,6 +99,7 @@ class _TellUsWhatYouNeedSectionState extends State<TellUsWhatYouNeedSection> {
         child: TextField(
           onTap: () {},
           maxLines: maxLine ?? 1,
+          style: TextStyle(color: Config.whiteColor),
           decoration: InputDecoration(
               hintText: label,
               hintStyle: TextStyle(
