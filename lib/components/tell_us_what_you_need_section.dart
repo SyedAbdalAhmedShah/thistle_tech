@@ -14,7 +14,6 @@ class TellUsWhatYouNeedSection extends StatefulWidget {
 class _TellUsWhatYouNeedSectionState extends State<TellUsWhatYouNeedSection> {
   @override
   Widget build(BuildContext context) {
-    int? selectedIndex;
 
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20.0),

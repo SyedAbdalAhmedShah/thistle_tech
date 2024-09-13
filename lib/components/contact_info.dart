@@ -1,7 +1,6 @@
 import 'package:app/components/verticalGap.dart';
 import 'package:app/utils/config.dart';
 import 'package:app/utils/strings.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ContactInfo extends StatelessWidget {

@@ -1,7 +1,6 @@
 # This is a generated file; do not edit or check into version control.
-path_provider=/Users/txlabz/tools/flutter_3.0/.pub-cache/hosted/pub.dartlang.org/path_provider-2.0.11/
-path_provider_android=/Users/txlabz/tools/flutter_3.0/.pub-cache/hosted/pub.dartlang.org/path_provider_android-2.0.14/
-path_provider_ios=/Users/txlabz/tools/flutter_3.0/.pub-cache/hosted/pub.dartlang.org/path_provider_ios-2.0.9/
-path_provider_linux=/Users/txlabz/tools/flutter_3.0/.pub-cache/hosted/pub.dartlang.org/path_provider_linux-2.1.7/
-path_provider_macos=/Users/txlabz/tools/flutter_3.0/.pub-cache/hosted/pub.dartlang.org/path_provider_macos-2.0.6/
-path_provider_windows=/Users/txlabz/tools/flutter_3.0/.pub-cache/hosted/pub.dartlang.org/path_provider_windows-2.1.0/
+path_provider=/Users/abdalshah/.pub-cache/hosted/pub.dev/path_provider-2.1.4/
+path_provider_android=/Users/abdalshah/.pub-cache/hosted/pub.dev/path_provider_android-2.2.10/
+path_provider_foundation=/Users/abdalshah/.pub-cache/hosted/pub.dev/path_provider_foundation-2.4.0/
+path_provider_linux=/Users/abdalshah/.pub-cache/hosted/pub.dev/path_provider_linux-2.2.1/
+path_provider_windows=/Users/abdalshah/.pub-cache/hosted/pub.dev/path_provider_windows-2.3.0/

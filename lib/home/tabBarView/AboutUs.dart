@@ -5,7 +5,7 @@ import 'package:app/utils/config.dart';
 import 'package:app/utils/helper.dart';
 import 'package:app/utils/responsive_handler.dart';
 import 'package:app/utils/strings.dart';
-import 'package:carousel_slider/carousel_slider.dart';
+import 'package:carousel_slider/carousel_slider.dart' as CS;
 import 'package:flutter/material.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
@@ -103,7 +103,7 @@ class _AboutUsState extends State<AboutUs> {
           SizedBox(
               height: 400,
               width: 400,
-              child: CarouselSlider.builder(
+              child: CS.CarouselSlider.builder(
                 itemCount: Helper.sliderItems.length,
                 itemBuilder: (context, index, pageindex) => Column(
                   children: [
@@ -128,7 +128,7 @@ class _AboutUsState extends State<AboutUs> {
                     )
                   ],
                 ),
-                options: CarouselOptions(
+                options: CS.CarouselOptions(
                     height: 400,
 
                     // aspectRatio: 16 / 9,

@@ -11,7 +11,11 @@ class CustomAnimatedContainer extends StatefulWidget {
   final Image? image;
 
   const CustomAnimatedContainer(
-      {this.icon, this.iconColor, required this.boxColor, this.image});
+      {super.key,
+      this.icon,
+      this.iconColor,
+      required this.boxColor,
+      this.image});
 
   @override
   State<CustomAnimatedContainer> createState() =>
