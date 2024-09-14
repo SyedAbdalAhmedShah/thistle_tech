@@ -10,7 +10,7 @@ class ServiceItems extends StatelessWidget {
   final double? customSize;
   final String title;
   const ServiceItems(
-      {required this.children,
+      {super.key, required this.children,
       required this.title,
       this.isTitleEnable,
       this.customSize});

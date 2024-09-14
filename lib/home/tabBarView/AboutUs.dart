@@ -133,54 +133,6 @@ class _AboutUsState extends State<AboutUs> {
               ),
             ),
           ),
-
-          //  CS.CarouselSlider.builder(
-          //   itemCount: Helper.sliderItems.length,
-          //   itemBuilder: (context, index, pageindex) => Column(
-          //     children: [
-          //       const VerticalGap(
-          //         customGap: 30,
-          //       ),
-          //       Helper.sliderItems[index],
-          //       VerticalGap(),
-          //       Row(
-          //         mainAxisAlignment: MainAxisAlignment.center,
-          //         children: List.generate(
-          //             Helper.sliderItems.length,
-          //             (index) => Container(
-          //                   width: 20,
-          //                   height: 8,
-          //                   decoration: BoxDecoration(
-          //                       color: carosalIndex == index
-          //                           ? Config.logoColor
-          //                           : Config.logoColor.withOpacity(0.5),
-          //                       shape: BoxShape.circle),
-          //                 )).toList(),
-          //       )
-          //     ],
-          //   ),
-          //   options: CS.CarouselOptions(
-          //       height: 400,
-
-          //       // aspectRatio: 16 / 9,
-          //       viewportFraction: 0.8,
-          //       initialPage: 0,
-          //       enableInfiniteScroll: true,
-          //       reverse: false,
-          //       autoPlay: true,
-          //       autoPlayInterval: const Duration(seconds: 5),
-          //       autoPlayAnimationDuration: const Duration(seconds: 1),
-          //       autoPlayCurve: Curves.fastOutSlowIn,
-          //       enlargeCenterPage: true,
-          //       onPageChanged: (index, point) {
-          //         setState(() {
-          //           carosalIndex = index;
-          //         });
-          //       },
-          //       scrollDirection: Axis.horizontal,
-          //       scrollPhysics: NeverScrollableScrollPhysics()),
-          // )),
-
           const ContactUsSection(),
           const Footer()
         ],

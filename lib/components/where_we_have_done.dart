@@ -12,7 +12,8 @@ class WhereWeHaveDoneIt extends StatelessWidget {
   final Color? textColor;
 
   const WhereWeHaveDoneIt(
-      {required this.defaultValue,
+      {super.key,
+      required this.defaultValue,
       required this.text,
       this.textColor,
       required this.fValue,

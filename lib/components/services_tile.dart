@@ -15,7 +15,8 @@ class ServicesTile extends StatefulWidget {
   final String description;
   final Color? titleTextColot;
   const ServicesTile(
-      {required this.color,
+      {super.key,
+      required this.color,
       required this.icon,
       this.iconColor,
       this.titleTextColot,
@@ -39,14 +40,14 @@ class _ServicesTileState extends State<ServicesTile> {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-        future: Future.delayed(Duration(milliseconds: 100))
+        future: Future.delayed(const Duration(milliseconds: 100))
             .then((value) => setState(() {
                   isLoading = false;
                 }))
             .then((value) => _flip()),
         builder: (context, async) {
           return AnimatedOpacity(
-            duration: Duration(seconds: 2),
+            duration: const Duration(seconds: 2),
             opacity: isLoading ? 0 : 1,
             child: TweenAnimationBuilder(
               tween: Tween<double>(begin: 0, end: angle),

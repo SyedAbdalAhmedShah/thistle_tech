@@ -13,7 +13,8 @@ class Header extends StatelessWidget {
   final double? sizedBoxWidth;
   final AlignmentGeometry? alignment;
   const Header(
-      {required this.isButtonActive,
+      {super.key,
+      required this.isButtonActive,
       this.customHeight,
       this.alignment,
       this.sizedBoxWidth,
@@ -66,8 +67,8 @@ class Header extends StatelessWidget {
               ? MainAxisAlignment.center
               : MainAxisAlignment.end,
           children: [
-            RHandler.getSpacer(),
-            RHandler.sizedBoxWhenSmalerThanTablet(context, 0.1),
+            const ResponsiveSpacer(),
+            const SizedBoxWhenSmalerThanTablet(0.1),
             Text(
               title,
               textAlign: TextAlign.center,
@@ -75,8 +76,8 @@ class Header extends StatelessWidget {
                   fontSize: RHandler.headingFontValue(context, 30, 55, 45),
                   color: Config.whiteColor),
             ),
-            RHandler.sizedBoxVisible(context, 0.02),
-            RHandler.sizedBoxWhenSmalerThanTablet(context, 0.015),
+            const SizedBoxVisible(0.02),
+            const SizedBoxWhenSmalerThanTablet(0.015),
             SizedBox(
               width: ResponsiveValue<double>(context,
                       valueWhen: [
@@ -93,8 +94,8 @@ class Header extends StatelessWidget {
                       color: Config.whiteColor,
                       letterSpacing: 1)),
             ),
-            RHandler.sizedBoxVisible(context, 0.08),
-            RHandler.sizedBoxWhenSmalerThanTablet(context, 0.04),
+            const SizedBoxVisible(0.08),
+            const SizedBoxWhenSmalerThanTablet(0.04),
             Visibility(
               visible: isButtonActive,
               child: MaterialButton(
@@ -108,7 +109,7 @@ class Header extends StatelessWidget {
                 ),
               ),
             ),
-            RHandler.sizedBoxVisible(context, 0.06),
+            const SizedBoxVisible(0.06),
           ],
         ),
       ),

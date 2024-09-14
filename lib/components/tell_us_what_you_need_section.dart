@@ -14,7 +14,6 @@ class TellUsWhatYouNeedSection extends StatefulWidget {
 class _TellUsWhatYouNeedSectionState extends State<TellUsWhatYouNeedSection> {
   @override
   Widget build(BuildContext context) {
-
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20.0),
       child: Column(
@@ -25,13 +24,13 @@ class _TellUsWhatYouNeedSectionState extends State<TellUsWhatYouNeedSection> {
               Strings.tellUsWhat,
               style: TextStyle(color: Config.lightYellow, fontSize: 18),
             ),
-            buildTextFieldsBox(Strings.yourName, Strings.yourEmail),
-            buildTextFieldsBox(Strings.roleAndTitle, Strings.company),
-            buildTextField(
-              'Message',
-              5,
-              100,
-              623,
+            const BuildTextFieldsBox(Strings.yourName, Strings.yourEmail),
+            const BuildTextFieldsBox(Strings.roleAndTitle, Strings.company),
+            const BuildTextField(
+              label: 'Message',
+              maxLine: 5,
+              width: 100,
+              height: 623,
             ),
             Container(
               width: 620,
@@ -57,8 +56,15 @@ class _TellUsWhatYouNeedSectionState extends State<TellUsWhatYouNeedSection> {
           ]),
     );
   }
+}
 
-  SizedBox buildTextFieldsBox(String firstField, String secondField) {
+class BuildTextFieldsBox extends StatelessWidget {
+  final String firstField;
+  final String secondField;
+  const BuildTextFieldsBox(this.firstField, this.secondField, {super.key});
+
+  @override
+  Widget build(BuildContext context) {
     return SizedBox(
       child: ResponsiveRowColumn(
         layout:
@@ -67,18 +73,27 @@ class _TellUsWhatYouNeedSectionState extends State<TellUsWhatYouNeedSection> {
                 : ResponsiveRowColumnType.ROW,
         children: [
           ResponsiveRowColumnItem(
-            child: buildTextField(firstField),
+            child: BuildTextField(label: firstField),
           ),
           ResponsiveRowColumnItem(
-            child: buildTextField(secondField),
+            child: BuildTextField(label: secondField),
           )
         ],
       ),
     );
   }
+}
 
-  Padding buildTextField(String label,
-      [int? maxLine, double? height, double? width]) {
+class BuildTextField extends StatelessWidget {
+  final String label;
+  final int? maxLine;
+  final double? height;
+  final double? width;
+  const BuildTextField(
+      {this.height, required this.label, this.maxLine, this.width, super.key});
+
+  @override
+  Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 8),
       child: Container(
