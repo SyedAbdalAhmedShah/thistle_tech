@@ -275,10 +275,10 @@
       "name": "app",
       "rootUri": "../",
       "packageUri": "lib/",
-      "languageVersion": "2.17"
+      "languageVersion": "3.3"
     }
   ],
-  "generated": "2024-09-13T21:07:26.816371Z",
+  "generated": "2024-09-14T15:52:08.137256Z",
   "generator": "pub",
   "generatorVersion": "3.5.0",
   "flutterRoot": "file:///Library/flutter_sdks/flutter_3.24.0",

@@ -18,15 +18,14 @@ class ContactUsSection extends StatelessWidget {
         child: ResponsiveRowColumn(
           columnCrossAxisAlignment: CrossAxisAlignment.center,
           rowMainAxisAlignment: MainAxisAlignment.center,
-          rowPadding: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+          rowPadding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
           rowCrossAxisAlignment: CrossAxisAlignment.start,
           layout: ResponsiveWrapper.of(context).isSmallerThan(TABLET)
               ? ResponsiveRowColumnType.COLUMN
               : ResponsiveRowColumnType.ROW,
           children: const [
-            ResponsiveRowColumnItem( child: ContactInfo()),
-            ResponsiveRowColumnItem(
-              child: TellUsWhatYouNeedSection())
+            ResponsiveRowColumnItem(child: ContactInfo()),
+            ResponsiveRowColumnItem(child: TellUsWhatYouNeedSection())
           ],
         ),
       ),

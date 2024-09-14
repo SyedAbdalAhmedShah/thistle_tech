@@ -8,31 +8,54 @@ class ContactInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return const Padding(
       padding: const EdgeInsets.all(16.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          contactInfoTile(Strings.emailUs, Strings.email, Icons.email_outlined),
-          const VerticalGap(
+          ContactInfoTile(
+              title: Strings.emailUs,
+              subTitle: Strings.email,
+              icon: Icons.email_outlined),
+          VerticalGap(
             customGap: 20,
           ),
-          contactInfoTile(Strings.callUs, Strings.callNumber, Icons.call),
-          const VerticalGap(
+          ContactInfoTile(
+              title: Strings.callUs,
+              subTitle: Strings.callNumber,
+              icon: Icons.call),
+          VerticalGap(
             customGap: 20,
           ),
-          contactInfoTile(Strings.officeLocation, Strings.location,
-              Icons.assistant_navigation),
-          const VerticalGap(
+          ContactInfoTile(
+              title: Strings.officeLocation,
+              subTitle: Strings.location,
+              icon: Icons.assistant_navigation),
+          VerticalGap(
             customGap: 20,
           ),
-          contactInfoTile(Strings.hours, Strings.hoursTime, Icons.timer)
+          ContactInfoTile(
+              title: Strings.hours,
+              subTitle: Strings.hoursTime,
+              icon: Icons.timer)
         ],
       ),
     );
   }
+}
 
-  Row contactInfoTile(String title, String subTitle, IconData icon) {
+class ContactInfoTile extends StatelessWidget {
+  final String title;
+  final String subTitle;
+  final IconData icon;
+  const ContactInfoTile(
+      {required this.icon,
+      required this.subTitle,
+      required this.title,
+      super.key});
+
+  @override
+  Widget build(BuildContext context) {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
