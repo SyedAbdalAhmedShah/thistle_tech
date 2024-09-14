@@ -8,25 +8,34 @@ class FooterInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Wrap(
+    return const Wrap(
       alignment: WrapAlignment.center,
       children: [
-        footerInfoText("© 2022 Thistle Tech Limited"),
-        footerInfoText(" | "),
-        footerInfoText("Tauranga, BoP, New Zealand"),
-        footerInfoText(" | "),
-        footerInfoText("enquiries@thistletech.co.nz "),
-        footerInfoText(" | "),
-        footerInfoText("+64 (22) 151 7616"),
+        FooterInfoText("© 2022 Thistle Tech Limited"),
+        FooterInfoText(" | "),
+        FooterInfoText("Tauranga, BoP, New Zealand"),
+        FooterInfoText(" | "),
+        FooterInfoText("enquiries@thistletech.co.nz "),
+        FooterInfoText(" | "),
+        FooterInfoText("+64 (22) 151 7616"),
       ],
     );
   }
+}
 
-  Text footerInfoText(String text) {
-    return Text(text,
-        style: GoogleFonts.roboto(
-            fontWeight: FontWeight.w300,
-            color: Config.whiteColor,
-            fontSize: 12));
+class FooterInfoText extends StatelessWidget {
+  final String text;
+  const FooterInfoText(this.text, {super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text,
+      style: GoogleFonts.roboto(
+        fontWeight: FontWeight.w300,
+        color: Config.whiteColor,
+        fontSize: 12,
+      ),
+    );
   }
 }

@@ -105,7 +105,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                       customGap: 25,
                                     )),
                                 // PopupMenuItem 1
-                                PopupMenuItem(
+                                const PopupMenuItem(
                                   value: 1,
                                   // row with 2 children
                                   child: SizedBox(
@@ -116,7 +116,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                             MainAxisAlignment.spaceBetween,
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
-                                        children: const [
+                                        children: [
                                           Text(
                                             Strings.home,
                                             style: TextStyle(
@@ -128,7 +128,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                         ],
                                       )),
                                 ),
-                                PopupMenuItem(
+                                const PopupMenuItem(
                                   value: 2,
                                   // row with 2 children
                                   child: SizedBox(
@@ -139,7 +139,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                             MainAxisAlignment.spaceBetween,
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
-                                        children: const [
+                                        children: [
                                           Text(
                                             Strings.ourServices,
                                             style: TextStyle(
@@ -151,7 +151,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                         ],
                                       )),
                                 ),
-                                PopupMenuItem(
+                                const PopupMenuItem(
                                   value: 3,
                                   // row with 2 children
                                   child: SizedBox(
@@ -162,7 +162,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                                             MainAxisAlignment.spaceBetween,
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
-                                        children: const [
+                                        children: [
                                           Text(
                                             Strings.about,
                                             style: TextStyle(

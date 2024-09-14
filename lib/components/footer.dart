@@ -20,15 +20,15 @@ class Footer extends StatelessWidget {
         layout: ResponsiveWrapper.of(context).isSmallerThan(TABLET)
             ? ResponsiveRowColumnType.COLUMN
             : ResponsiveRowColumnType.ROW,
-        children: [
-          const ResponsiveRowColumnItem(
+        children: const [
+          ResponsiveRowColumnItem(
               rowOrder: 1, columnOrder: 2, child: FooterInfo()),
           ResponsiveRowColumnItem(
               rowOrder: 2,
               columnOrder: 1,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
+                children: [
                   SizedBox(
                     width: 15,
                   ),
