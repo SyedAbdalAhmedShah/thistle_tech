@@ -1,7 +1,6 @@
 import 'package:app/utils/strings.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_framework/responsive_framework.dart';
-import 'package:responsive_framework/responsive_value.dart';
 
 class RHandler {
   static double getBorderRadiusValue(BuildContext context) {

@@ -9,6 +9,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
@@ -40,6 +42,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             headerSliverBuilder: (context, innerBoxIsScrolled) => [
                   SliverAppBar(
                     primary: false,
+                    toolbarHeight: kToolbarHeight + 70,
                     backgroundColor: ResponsiveValue(context,
                             valueWhen: [
                               Condition.smallerThan(
@@ -49,7 +52,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                         .value!,
 
                     title: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 38.0),
+                      padding: const EdgeInsets.symmetric(horizontal: 0.0),
                       child: ResponsiveVisibility(
                           visible: false,
                           visibleWhen: const [

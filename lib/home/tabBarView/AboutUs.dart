@@ -96,43 +96,6 @@ class _AboutUsState extends State<AboutUs> {
             title: Strings.testimonials,
             defaultValue: 45,
           ),
-          const KeyServicesText(
-            title: Strings.whatPeopleAreSaying,
-            defaultValue: 20,
-          ),
-          SizedBox(
-            height: 400,
-            width: 400,
-            child: CS.CarouselView(
-              itemExtent: Helper.sliderItems.length.toDouble(),
-              children: List.generate(
-                Helper.sliderItems.length,
-                (index) => Column(
-                  children: [
-                    const VerticalGap(
-                      customGap: 30,
-                    ),
-                    Helper.sliderItems[index],
-                    const VerticalGap(),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: List.generate(
-                          Helper.sliderItems.length,
-                          (index) => Container(
-                                width: 20,
-                                height: 8,
-                                decoration: BoxDecoration(
-                                    color: carosalIndex == index
-                                        ? Config.logoColor
-                                        : Config.logoColor.withOpacity(0.5),
-                                    shape: BoxShape.circle),
-                              )).toList(),
-                    )
-                  ],
-                ),
-              ),
-            ),
-          ),
           const ContactUsSection(),
           const Footer()
         ],
